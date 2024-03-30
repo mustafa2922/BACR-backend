@@ -17,8 +17,8 @@ app.use(morgan("tiny"));
 app.use(Maincontroller);
 app.use(Authcontroller);
 
+dbconnection();
 server.listen(3001);
 server.on("listening", () => {
   console.log("server is up...");
-  dbconnection();
 });
