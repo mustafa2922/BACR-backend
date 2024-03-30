@@ -9,7 +9,7 @@ const Maincontroller = require("./controllers/main");
 const Authcontroller = require("./controllers/auth");
 const dbconnection = require("./utliz/dbConnection");
 
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(morgan("tiny"));
