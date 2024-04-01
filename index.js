@@ -24,7 +24,8 @@ app.use(Authcontroller);
 const start = async () => {
   try {
     if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect(process.env.MONGODB_URI);
+      await mongoose.connect("mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+");
       console.log("connected to Database...");
       server.listen(3001);
       server.on("listening", () => {
