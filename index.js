@@ -1,6 +1,5 @@
 const express = require("express");
 const http = require("http");
-const cors = require("cors");
 const bodyparser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
@@ -11,7 +10,6 @@ const Authcontroller = require("./controllers/auth");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// app.use(cors({ origin: "*" }));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(morgan("tiny"));
