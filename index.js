@@ -3,6 +3,7 @@ const http = require("http");
 const bodyparser = require("body-parser");
 const morgan = require("morgan");
 const app = express();
+const cors = require("cors");
 const server = http.createServer(app);
 const Maincontroller = require("./controllers/main");
 const Authcontroller = require("./controllers/auth");
@@ -13,6 +14,7 @@ require("dotenv").config();
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(morgan("tiny"));
+app.use(cors({origin:"*"}));
 
 app.get("/",(req,res)=>{
   return res.status(200).json({msg:"server is running"});
