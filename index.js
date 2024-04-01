@@ -16,6 +16,10 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(morgan("tiny"));
 
+app.get("/",(req,res)=>{
+  return res.status(200).json({msg:"server is running"});
+  )
+
 app.use(Maincontroller);
 app.use(Authcontroller);
 
