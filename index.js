@@ -48,10 +48,7 @@ app.use(Authcontroller);
 
 // start();
 
-mongoose.connect('mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect('mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => {
   console.log("Connected to MongoDB");
 })
