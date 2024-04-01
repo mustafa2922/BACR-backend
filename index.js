@@ -11,7 +11,7 @@ const Authcontroller = require("./controllers/auth");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(morgan("tiny"));
