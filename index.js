@@ -21,29 +21,42 @@ app.get("/",(req,res)=>{
 app.use(Maincontroller);
 app.use(Authcontroller);
 
-const start = async () => {
-  try {
-    if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect("mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
-");
-      console.log("connected to Database...");
-      server.listen(3001);
-      server.on("listening", () => {
-        console.log("server is up...");
-      });
+// const start = async () => {
+//   try {
+//     if (mongoose.connection.readyState !== 1) {
+//       await mongoose.connect("mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0
+// ");
+//       console.log("connected to Database...");
+//       server.listen(3001);
+//       server.on("listening", () => {
+//         console.log("server is up...");
+//       });
 
-      return;
-    }
-    console.log("alredy connected to Database...");
-    server.listen(3001);
-    server.on("listening", () => {
-      console.log("server is up...");
-    });
-    return;
-  } catch (error) {
-    console.log(error.message);
-    process.exit(1);
-  }
-};
+//       return;
+//     }
+//     console.log("alredy connected to Database...");
+//     server.listen(3001);
+//     server.on("listening", () => {
+//       console.log("server is up...");
+//     });
+//     return;
+//   } catch (error) {
+//     console.log(error.message);
+//     process.exit(1);
+//   }
+// };
 
-start();
+// start();
+
+mongoose.connect('mongodb+srv://astraldevelopers0:BVyF8kMNLx6V3601@cluster0.z1p58ro.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("Connected to MongoDB");
+})
+.catch((error) => {
+  console.error("Error connecting to MongoDB:", error);
+});
+
+ server.listen(3000);
